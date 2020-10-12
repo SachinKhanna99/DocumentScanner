@@ -1,2 +1,3 @@
+include ':scanlibrary'
 rootProject.name='Document Scanner'
-include ':app', ':sdk'
+include ':app'

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#151313"
     tools:context=".MainActivity">
 
 
@@ -19,7 +19,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="20dp"
         android:layout_marginBottom="20dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        app:tint="#03A9F4" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -36,10 +37,8 @@
             android:layout_height="wrap_content"
             android:text="LOGIN"
             android:textSize="27sp"
-
             android:textAlignment="center"
             android:layout_marginTop="15dp"
-
             android:textColor="#005357"/>
         <TextView
             android:layout_width="match_parent"
@@ -48,7 +47,7 @@
             android:textSize="17sp"
             android:layout_marginTop="75dp"
             android:layout_marginLeft="30dp"
-            android:textColor="#005357"/>
+            android:textColor="#000"/>
         <EditText
             android:id="@+id/login_email"
             android:layout_width="270dp"
@@ -70,7 +69,7 @@
             android:textSize="17sp"
             android:layout_marginTop="165dp"
             android:layout_marginLeft="30dp"
-            android:textColor="#005357"/>
+            android:textColor="#000"/>
         <EditText
             android:id="@+id/login_password"
             android:layout_width="250dp"
@@ -94,19 +93,19 @@
             android:layout_marginLeft="280dp"
             android:layout_marginTop="210dp"
             android:visibility="gone"
-            android:tint="#005357"
             android:src="@drawable/ic_remove_red_eye_black_24dp"
-            android:layout_below="@id/login_email"/>
+            android:layout_below="@id/login_email"
+            app:tint="#000" />
         <ImageView
             android:id="@+id/close_eye"
-            android:tint="#005357"
             android:visibility="visible"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="280dp"
             android:layout_marginTop="210dp"
             android:src="@drawable/eye"
-            android:layout_below="@id/login_email"/>
+            android:layout_below="@id/login_email"
+            app:tint="#000" />
         <Button
             android:id="@+id/login_button"
             android:layout_width="150dp"
@@ -123,39 +122,42 @@
         <TextView
             android:id="@+id/signup_text"
             android:textSize="15sp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Create new Account"
 
-            android:textColor="#005357"
+            android:textColor="#000"
             android:textStyle="bold"
             android:layout_marginTop="350dp"
-            android:layout_marginLeft="95dp"
+            android:layout_marginLeft="100dp"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="0dp" />
 
-
+        <TextView
+            android:id="@+id/or"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:layout_marginTop="390dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:layout_below="@+id/card"/>
+        <TextView
+            android:id="@+id/skip_it"
+            android:textSize="17sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:layout_marginTop="420dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_below="@+id/or"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="6dp" />
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/or"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="OR"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:layout_below="@+id/card"/>
-    <TextView
-        android:id="@+id/skip_it"
-        android:textSize="17sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Skip"
-        android:textColor="@android:color/black"
-        android:layout_below="@+id/or"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="6dp" />
+
 
 </RelativeLayout>

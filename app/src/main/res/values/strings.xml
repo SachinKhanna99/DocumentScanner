@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">Document Scanner</string>
+    <string name="storage_path">Scanner Document/files/</string>
+    <string name="storage_stage">Scanner Document/stage/</string>
+    <string name="action_settings">Settings</string>
+    <string name="scanning">Scanning</string>
+    <string name="done">Save</string>
+    <string name="scan">Next</string>
+    <string name="cantCrop">Cant crop the image, change the points</string>
+    <string name="ok">Ok</string>
+    <string name="loading">Loading</string>
+    <string name="applying_filter">Applying filter</string>
+    <string name="low_memory">Low Memory</string>
+    <string name="base_scantmp_path">/Scanner Document/tmp</string>
+
+    <string-array name="category">
+        <item>Others</item>
+        <item>Shopping</item>
+        <item>Vehicle</item>
+        <item>Medical</item>
+        <item>Legal</item>
+        <item>Housing</item>
+        <item>Books</item>
+        <item>Food</item>
+        <item>Banking</item>
+        <item>Receipts</item>
+        <item>Manuals</item>
+        <item>Travel</item>
+        <item>Notes</item>
+        <item>ID</item>
+    </string-array>
+
 </resources>

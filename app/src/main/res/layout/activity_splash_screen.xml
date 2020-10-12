@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#151313"
     android:orientation="vertical"
     tools:context=".SplashScreen">
 
 <ImageView
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:layout_marginTop="100dp"
+    android:layout_marginTop="300dp"
     android:src="@drawable/ic_camera_black_24dp"/>
    <TextView
        android:layout_width="match_parent"

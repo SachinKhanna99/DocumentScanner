@@ -31,10 +31,9 @@
 #ifndef OPENCV_FLANN_HIERARCHICAL_CLUSTERING_INDEX_H_
 #define OPENCV_FLANN_HIERARCHICAL_CLUSTERING_INDEX_H_
 
-//! @cond IGNORED
-
 #include <algorithm>
 #include <map>
+#include <cassert>
 #include <limits>
 #include <cmath>
 
@@ -152,7 +151,7 @@ private:
         int n = indices_length;
 
         int rnd = rand_int(n);
-        CV_DbgAssert(rnd >=0 && rnd < n);
+        assert(rnd >=0 && rnd < n);
 
         centers[0] = dsindices[rnd];
 
@@ -207,7 +206,7 @@ private:
 
         // Choose one random center and set the closestDistSq values
         int index = rand_int(n);
-        CV_DbgAssert(index >=0 && index < n);
+        assert(index >=0 && index < n);
         centers[0] = dsindices[index];
 
         // Computing distance^2 will have the advantage of even higher probability further to pick new centers
@@ -294,7 +293,7 @@ private:
 
         // Choose one random center and set the closestDistSq values
         int index = rand_int(n);
-        CV_DbgAssert(index >=0 && index < n);
+        assert(index >=0 && index < n);
         centers[0] = dsindices[index];
 
         for (int i = 0; i < n; i++) {
@@ -385,6 +384,7 @@ public:
             throw FLANNException("Unknown algorithm for choosing initial centers.");
         }
 
+        trees_ = get_param(params,"trees",4);
         root = new NodePtr[trees_];
         indices = new int*[trees_];
 
@@ -547,7 +547,7 @@ public:
     void findNeighbors(ResultSet<DistanceType>& result, const ElementType* vec, const SearchParams& searchParams) CV_OVERRIDE
     {
 
-        const int maxChecks = get_param(searchParams,"checks",32);
+        int maxChecks = get_param(searchParams,"checks",32);
 
         // Priority queue storing intermediate branches in the best-bin-first search
         Heap<BranchSt>* heap = new Heap<BranchSt>((int)size_);
@@ -556,8 +556,6 @@ public:
         int checks = 0;
         for (int i=0; i<trees_; ++i) {
             findNN(root[i], result, vec, checks, maxChecks, heap, checked);
-            if ((checks >= maxChecks) && result.full())
-                break;
         }
 
         BranchSt branch;
@@ -565,10 +563,10 @@ public:
             NodePtr node = branch.node;
             findNN(node, result, vec, checks, maxChecks, heap, checked);
         }
+        assert(result.full());
 
         delete heap;
 
-        CV_Assert(result.full());
     }
 
     IndexParams getParameters() const CV_OVERRIDE
@@ -580,7 +578,7 @@ public:
 private:
 
     /**
-     * Structure representing a node in the hierarchical k-means tree.
+     * Struture representing a node in the hierarchical k-means tree.
      */
     struct Node
     {
@@ -749,8 +747,8 @@ private:
                 Heap<BranchSt>* heap, std::vector<bool>& checked)
     {
         if (node->childs==NULL) {
-            if ((checks>=maxChecks) && result.full()) {
-                return;
+            if (checks>=maxChecks) {
+                if (result.full()) return;
             }
             for (int i=0; i<node->size; ++i) {
                 int index = node->indices[i];
@@ -846,7 +844,5 @@ private:
 };
 
 }
-
-//! @endcond
 
 #endif /* OPENCV_FLANN_HIERARCHICAL_CLUSTERING_INDEX_H_ */

@@ -1,13 +1,59 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="org.opencv"
-4    android:versionCode="404000"
-5    android:versionName="4.4.0" >
+4    android:versionCode="1"
+5    android:versionName="1.0" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
 8-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
-9        android:targetSdkVersion="26" />
+9        android:targetSdkVersion="29" />
 9-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
 10
-11</manifest>
+11    <uses-feature
+11-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:4:5-6:35
+12        android:name="android.hardware.camera"
+12-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:5:9-47
+13        android:required="true" />
+13-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:6:9-32
+14
+15    <uses-permission android:name="android.permission.CAMERA" />
+15-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:8:5-65
+15-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:8:22-62
+16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+16-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:9:5-80
+16-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:9:22-77
+17    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+17-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:10:5-81
+17-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:10:22-78
+18
+19    <application
+19-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:12:5-27:19
+20        android:allowBackup="true"
+20-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:13:9-35
+21        android:hardwareAccelerated="true"
+21-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:15:9-43
+22        android:label="@string/app_name"
+22-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:16:9-41
+23        android:largeHeap="true" >
+23-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:14:9-33
+24        <provider
+24-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:18:9-26:20
+25            android:name="androidx.core.content.FileProvider"
+25-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:19:13-62
+26            android:authorities="com.example.documentscanner.provider"
+26-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:20:13-71
+27            android:exported="false"
+27-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:21:13-37
+28            android:grantUriPermissions="true" >
+28-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:22:13-47
+29            <meta-data
+29-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:23:13-25:57
+30                android:name="android.support.FILE_PROVIDER_PATHS"
+30-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:24:17-67
+31                android:resource="@xml/provider_paths" />
+31-->C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:25:17-55
+32        </provider>
+33    </application>
+34
+35</manifest>

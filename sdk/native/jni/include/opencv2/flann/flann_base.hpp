@@ -31,9 +31,8 @@
 #ifndef OPENCV_FLANN_BASE_HPP_
 #define OPENCV_FLANN_BASE_HPP_
 
-//! @cond IGNORED
-
 #include <vector>
+#include <cassert>
 #include <cstdio>
 
 #include "general.h"
@@ -282,7 +281,7 @@ private:
  * of the form (branching-1)*K+1 smaller than clusters.rows).
  */
 template <typename Distance>
-int hierarchicalClustering(const Matrix<typename Distance::ElementType>& points, Matrix<typename Distance::CentersType>& centers,
+int hierarchicalClustering(const Matrix<typename Distance::ElementType>& points, Matrix<typename Distance::ResultType>& centers,
                            const KMeansIndexParams& params, Distance d = Distance())
 {
     KMeansIndex<Distance> kmeans(points, params, d);
@@ -293,7 +292,4 @@ int hierarchicalClustering(const Matrix<typename Distance::ElementType>& points,
 }
 
 }
-
-//! @endcond
-
 #endif /* OPENCV_FLANN_BASE_HPP_ */

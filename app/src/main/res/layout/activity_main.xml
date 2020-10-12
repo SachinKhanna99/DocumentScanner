@@ -13,6 +13,7 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
+
 <!--    <Button-->
 <!--        android:id="@+id/scan"-->
 <!--        style="@style/Widget.AppCompat.Button"-->
@@ -28,7 +29,12 @@
 <!--        android:textColor="@android:color/white">-->
 
 <!--    </Button>-->
-
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recycle"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_below="@+id/empty_list">
+      </androidx.recyclerview.widget.RecyclerView>
 
           <com.google.android.material.floatingactionbutton.FloatingActionButton
               android:id="@+id/scan"
@@ -38,14 +44,16 @@
               android:layout_centerHorizontal="true"
               android:layout_marginBottom="50dp"
               android:tint="#ffff"
-             app:backgroundTint="#005357"
+             app:backgroundTint="#000"
               app:fabCustomSize="60dp"
               app:maxImageSize="40dp"
+              android:layout_centerInParent="true"
               android:src="@drawable/ic_camera_black_24dp"
-              android:orientation="horizontal"
               android:layout_alignParentEnd="true"
               android:layout_marginEnd="30dp"
+
               android:tooltipText="Scan Image"
+
               android:textColor="@android:color/white">
 
           </com.google.android.material.floatingactionbutton.FloatingActionButton>
@@ -61,7 +69,7 @@
 
     <LinearLayout
         android:id="@+id/empty_list"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal"

@@ -2,7 +2,36 @@ R_DEF: Internal format may change without notice
 local
 attr? camera_id
 attr? show_fps
+color blue
+color bottom_background_color
+color colorAccent
+color colorPrimary
+color colorPrimaryDark
+color orange
+color polygonViewCircleBackground
+color polygonViewCircleStrokeColor
+color textColor
+drawable camera
+drawable capsule_bg
+drawable circle
+drawable circle_bg
 id any
 id back
 id front
+string action_settings
+string app_name
+string applying_filter
+string base_scantmp_path
+string base_staging_path
+string base_storage_path
+string cantCrop
+string done
+string hello_world
+string loading
+string low_memory
+string low_memory_message
+string ok
+string scan
+string scanning
 styleable CameraBridgeViewBase show_fps camera_id
+xml provider_paths
