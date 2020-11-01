@@ -8,13 +8,16 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.example.documentscanner.MainActivity;
 import com.example.documentscanner.R;
 
 public class DialogUtil {
 
-    public static void UserFilename( Context context, String FileName,  String Category,final UtilDialogCallback callback ){
+    public static void UserFilename(final Context context, String FileName, String Category, final UtilDialogCallback callback ){
 
+        final Toast s=Toast.makeText(context,"File saved",Toast.LENGTH_LONG);
         LayoutInflater layoutInflaterAndroid = LayoutInflater.from(context);
         View mView = layoutInflaterAndroid.inflate(R.layout.file_input, null);
         AlertDialog.Builder alertDialogBuilderUserInput = new AlertDialog.Builder(context);
@@ -44,12 +47,17 @@ public class DialogUtil {
                 .setPositiveButton("Save", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
                         callback.onSave(
                                 fileNameText.getText().toString(),
-                                categorySelection.getSelectedItem().toString()
+                                categorySelection.getSelectedItem().toString(),
+                                s
+
                         );
                     }
-                })
+
+                }
+                )
 
                 .setNegativeButton("Cancel",
                         new DialogInterface.OnClickListener() {

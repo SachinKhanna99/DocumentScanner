@@ -1,29 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="blue">#ff59a9ff</color>
-    <color name="bottom_background_color">#ffc4c2bc</color>
-    <color name="colorAccent">#8A1C44</color>
-    <color name="colorPrimary">#8a1c44</color>
-    <color name="colorPrimaryDark">#70002a</color>
-    <color name="orange">#ffff900d</color>
-    <color name="polygonViewCircleBackground">#90e5f8ff</color>
-    <color name="polygonViewCircleStrokeColor">#ff59a9ff</color>
-    <color name="textColor">#8a1c44</color>
-    <string name="action_settings">Settings</string>
-    <string name="app_name">ScanLibrary</string>
-    <string name="applying_filter">Applying filter</string>
-    <string name="base_scantmp_path">Scanner Document/scantmp/</string>
-    <string name="base_staging_path">Scanner Document/stage/</string>
-    <string name="base_storage_path">Scanner Document/tmp/</string>
-    <string name="cantCrop">Cant crop the image, change the points</string>
-    <string name="done">Save</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="loading">Loading</string>
-    <string name="low_memory">Low Memory</string>
-    <string name="low_memory_message">Your phone is low on memory, you may feel some lags while editing images.</string>
-    <string name="ok">Ok</string>
-    <string name="scan">Next</string>
-    <string name="scanning">Scanning</string>
     <declare-styleable name="CameraBridgeViewBase">
        <attr format="boolean" name="show_fps"/>
        <attr format="integer" name="camera_id">

@@ -9,101 +9,122 @@
     tools:context=".MainActivity">
 
 
-  <RelativeLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent">
-
-
-<!--    <Button-->
-<!--        android:id="@+id/scan"-->
-<!--        style="@style/Widget.AppCompat.Button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginBottom="50dp"-->
-<!--        android:background="#005357"-->
-<!--        android:drawableStart="@drawable/ic_camera_black_24dp"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:padding="10dp"-->
-<!--        android:textColor="@android:color/white">-->
-
-<!--    </Button>-->
-      <androidx.recyclerview.widget.RecyclerView
-          android:id="@+id/recycle"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:layout_below="@+id/empty_list">
-      </androidx.recyclerview.widget.RecyclerView>
-
-          <com.google.android.material.floatingactionbutton.FloatingActionButton
-              android:id="@+id/scan"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignParentBottom="true"
-              android:layout_centerHorizontal="true"
-              android:layout_marginBottom="50dp"
-              android:tint="#ffff"
-             app:backgroundTint="#000"
-              app:fabCustomSize="60dp"
-              app:maxImageSize="40dp"
-              android:layout_centerInParent="true"
-              android:src="@drawable/ic_camera_black_24dp"
-              android:layout_alignParentEnd="true"
-              android:layout_marginEnd="30dp"
-
-              android:tooltipText="Scan Image"
-
-              android:textColor="@android:color/white">
-
-          </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
-
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/rw"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_below="@+id/empty_list">-->
-<!--    </androidx.recyclerview.widget.RecyclerView>-->
-
-    <LinearLayout
-        android:id="@+id/empty_list"
-        android:visibility="gone"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|center_horizontal"
-        android:orientation="vertical">
-
-      <ImageView
-          android:id="@+id/empty_list_icon"
-          android:layout_width="200dp"
-          android:layout_height="200dp"
-          android:background="@drawable/empty" />
-
-      <TextView
-          android:id="@+id/empty_list_title"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:textStyle="bold"
-          android:text="Your List Is Empty"
-          android:paddingLeft="20dp"
-          android:paddingRight="20dp"
-          android:textSize="24dp"
-          android:gravity="center_horizontal"/>
-
-      <TextView
-          android:id="@+id/empty_list_message"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="Scan a document and start creating a list"
-          android:paddingLeft="40dp"
-          android:paddingRight="40dp"
-          android:gravity="center_horizontal" />
-
-    </LinearLayout>
+        android:layout_height="match_parent">
 
 
-  </RelativeLayout>
+        <!--    <Button-->
+        <!--        android:id="@+id/scan"-->
+        <!--        style="@style/Widget.AppCompat.Button"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_alignParentBottom="true"-->
+        <!--        android:layout_centerHorizontal="true"-->
+        <!--        android:layout_marginBottom="50dp"-->
+        <!--        android:background="#005357"-->
+        <!--        android:drawableStart="@drawable/ic_camera_black_24dp"-->
+        <!--        android:orientation="horizontal"-->
+        <!--        android:padding="10dp"-->
+        <!--        android:textColor="@android:color/white">-->
+
+        <!--    </Button>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/empty_list">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="50dp"
+            android:tint="#ffff"
+            app:backgroundTint="#000"
+            app:fabCustomSize="60dp"
+            app:maxImageSize="40dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_camera_black_24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+
+            android:tooltipText="Scan Image"
+
+            android:textColor="@android:color/white">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="150dp"
+            android:tint="#ffff"
+            app:backgroundTint="#000"
+            app:fabCustomSize="60dp"
+            app:maxImageSize="40dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/gallery"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+
+            android:tooltipText="Choose from gallery"
+
+            android:textColor="@android:color/white">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+        <!--    <androidx.recyclerview.widget.RecyclerView-->
+        <!--        android:id="@+id/rw"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="match_parent"-->
+        <!--        android:layout_below="@+id/empty_list">-->
+        <!--    </androidx.recyclerview.widget.RecyclerView>-->
+
+        <LinearLayout
+            android:id="@+id/empty_list"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/empty_list_icon"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@drawable/empty" />
+
+            <TextView
+                android:id="@+id/empty_list_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Your List Is Empty"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="24dp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/empty_list_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scan a document and start creating a list"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:gravity="center_horizontal" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
 </FrameLayout>

@@ -11,8 +11,8 @@
     <string name="loading">Loading</string>
     <string name="applying_filter">Applying filter</string>
     <string name="low_memory">Low Memory</string>
-    <string name="low_memory_message">Your phone is low on memory, you may feel some lags while editing images.</string>
-    <string name="base_storage_path">PDF Scanner/tmp/</string>
-    <string name="base_staging_path">PDF Scanner/stage/</string>
-    <string name="base_scantmp_path">PDF Scanner/scantmp/</string>
+    <string name="low_memory_message">Your phone is low on memory .</string>
+    <string name="base_storage_path">Scanner Document/tmp/</string>
+    <string name="base_staging_path">Scanner Document/stage/</string>
+    <string name="base_scantmp_path">Scanner Document/scantmp</string>
 </resources>

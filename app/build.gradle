@@ -1,16 +1,17 @@
-import com.google.gms.googleservices.GoogleServicesPlugin
+plugins {
 
-apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 28
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.example.documentscanner"
+        applicationId "com.example.myabc"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
@@ -23,28 +24,37 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-
+    def nav_version = "2.3.1"
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation project(path: ':monscanner')
+    implementation project(path: ':opencv')
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'com.google.firebase:firebase-auth:19.4.0'
     implementation 'com.google.firebase:firebase-database:19.5.0'
-    implementation 'androidx.room:room-runtime:2.2.5'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation project(path: ':scanlibrary')
-
-
-    testImplementation 'junit:junit:4.12'
-    implementation 'com.karumi:dexter:6.2.1'
-
-    implementation 'com.google.android.gms:play-services-vision:20.1.2'
-    implementation 'com.google.firebase:firebase-core:17.5.0'
-    implementation 'com.google.firebase:firebase-ml-vision:24.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    implementation 'org.apache.pdfbox:jbig2-imageio:3.0.0-SNAPSHOT'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.google.firebase:firebase-ml-vision:24.1.0'
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.room:room-runtime:2.2.5'
+    implementation 'com.google.android.gms:play-services-vision:20.1.2'
     annotationProcessor 'androidx.room:room-compiler:2.2.5'
+    implementation 'com.karumi:dexter:6.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
-GoogleServicesPlugin.config.disableVersionCheck = true

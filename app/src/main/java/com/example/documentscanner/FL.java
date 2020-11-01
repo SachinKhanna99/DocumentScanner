@@ -63,7 +63,7 @@ public class FL extends RecyclerView.ViewHolder {
         if (this.adapter.multiSelect) {
             if (this.adapter.selectedItems.contains(item)) {
                 this.adapter.selectedItems.remove(item);
-                itemLayout.setBackgroundColor(Color.WHITE);
+                itemLayout.setBackgroundColor(Color.BLACK);
 
             } else {
                 this.adapter.selectedItems.add(item);

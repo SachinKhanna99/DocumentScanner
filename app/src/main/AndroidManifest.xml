@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.documentscanner">
+    package="com.example.myabc" >
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
 
     <application
         android:allowBackup="true"
@@ -13,42 +15,41 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".AddPagesActivity">
+        android:theme="@style/Theme.MyAbc" >
+        <activity android:name=".SettingActivity" >
+        </activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".UserDetail" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SplashScreen" >
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".QCR"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".HomePageActitvity"
+            android:label="@string/title_activity_home_page_actitvity"
+            android:theme="@style/Theme.MyAbc.NoActionBar" />
+        <activity android:name=".AddPagesActivity" />
+        <activity android:name=".MainActivity" >
             <meta-data
                 android:name="com.google.android.gms.vision.DEPENDENCIES"
                 android:value="ocr" />
         </activity>
 
-
-        <activity android:name=".LoginActitvity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SplashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-
-            </intent-filter>
-            <meta-data
-                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
-                android:value="ocr" />
-        </activity>
-
-
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.documentscanner.provider"
+            android:authorities="com.example.myabc.provider"
             android:exported="false"
-            android:grantUriPermissions="true"/>
-
+            android:grantUriPermissions="true" />
     </application>
-
 
 </manifest>

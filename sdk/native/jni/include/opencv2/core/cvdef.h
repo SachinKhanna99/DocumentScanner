@@ -186,6 +186,16 @@ namespace cv { namespace debug_build_guard { } using namespace debug_build_guard
 #  endif
 #endif
 
+#ifndef CV_ALWAYS_INLINE
+#if defined(__GNUC__) && (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 1))
+#define CV_ALWAYS_INLINE inline __attribute__((always_inline))
+#elif defined(_MSC_VER)
+#define CV_ALWAYS_INLINE __forceinline
+#else
+#define CV_ALWAYS_INLINE inline
+#endif
+#endif
+
 #if defined CV_DISABLE_OPTIMIZATION || (defined CV_ICC && !defined CV_ENABLE_UNROLLED)
 #  define CV_ENABLE_UNROLLED 0
 #else
@@ -585,7 +595,7 @@ __CV_ENUM_FLAGS_BITWISE_XOR_EQ   (EnumType, EnumType)                           
 #ifdef CV_XADD
   // allow to use user-defined macro
 #elif defined __GNUC__ || defined __clang__
-#  if defined __clang__ && __clang_major__ >= 3 && !defined __ANDROID__ && !defined __EMSCRIPTEN__ && !defined(__CUDACC__)
+#  if defined __clang__ && __clang_major__ >= 3 && !defined __ANDROID__ && !defined __EMSCRIPTEN__ && !defined(__CUDACC__)  && !defined __INTEL_COMPILER
 #    ifdef __ATOMIC_ACQ_REL
 #      define CV_XADD(addr, delta) __c11_atomic_fetch_add((_Atomic(int)*)(addr), delta, __ATOMIC_ACQ_REL)
 #    else
@@ -681,7 +691,7 @@ __CV_ENUM_FLAGS_BITWISE_XOR_EQ   (EnumType, EnumType)                           
 #  endif
 #endif
 #ifndef CV_CONSTEXPR
-#  define CV_CONSTEXPR const
+#  define CV_CONSTEXPR
 #endif
 
 // Integer types portatibility

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="image_quality_entries">
+        <item>Fast</item>
+        <item>Better</item>
+        <item>Highest</item>
+    </string-array>
+
+    <string-array name="image_quality_values">
+        <item>FAST</item>
+        <item>BETTER</item>
+        <item>HIGHEST</item>
+    </string-array>
+
+</resources>

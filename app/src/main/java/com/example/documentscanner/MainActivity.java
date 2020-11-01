@@ -19,7 +19,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.icu.text.SimpleDateFormat;
+
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -35,6 +35,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.documentscanner.Util.DialogUtil;
+import com.example.documentscanner.Util.FileIo;
 import com.example.documentscanner.Util.PDFWriterUtil;
 import com.example.documentscanner.Util.Ui;
 import com.example.documentscanner.Util.UtilDialogCallback;
@@ -55,13 +56,14 @@ import com.scanlibrary.ScanConstants;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-FloatingActionButton camera;
+        FloatingActionButton camera;
     private FileAdapter fileAdapter;
     private final Context c = this;
     private List<Uri> scannedBitmaps = new ArrayList<>();
@@ -72,6 +74,9 @@ FloatingActionButton camera;
     private String searchText = "";
     LiveData<List<Document>> liveData;
     RecyclerView recyclerView;
+
+    public MainActivity() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,13 +90,13 @@ FloatingActionButton camera;
         Ui.setNavigationBar(recyclerView,this);
 
         final String baseStorageDirectory =  getApplicationContext().getString( R.string.storage_path);
-        mkdir( baseStorageDirectory );
+        FileIo.mkdir( baseStorageDirectory );
 
         final String baseStagingDirectory =  getApplicationContext().getString( R.string.storage_stage);
-       mkdir( baseStagingDirectory );
+       FileIo.mkdir( baseStagingDirectory );
 
-        final String scanningTmpDirectory = "Scanner Document/temp/";
-       mkdir( scanningTmpDirectory );
+        final String scanningTmpDirectory =  getApplicationContext().getString( R.string.base_scantmp_path);;
+       FileIo.mkdir( scanningTmpDirectory );
 
         viewModel = ViewModelProviders.of(this).get(DocumentView.class);
         fileAdapter = new FileAdapter(viewModel,this);
@@ -145,16 +150,17 @@ FloatingActionButton camera;
                 String stagingDirPath = getApplicationContext().getString( R.string.storage_stage );
                 String scanningTmpDirectory =  getApplicationContext().getString( R.string.base_scantmp_path );;
 
-                clearDirectory( stagingDirPath );
-                clearDirectory( scanningTmpDirectory );
+                FileIo.clearDirectory( stagingDirPath );
+                FileIo.clearDirectory( scanningTmpDirectory );
 
 
                 Intent intent = new Intent(MainActivity.this, ScanActivity.class);
                 intent.putExtra(ScanConstants.OPEN_INTENT_PREFERENCE, ScanConstants.OPEN_CAMERA);
-
                 //startActivityForResult(intent, ScanConstants.START_CAMERA_REQUEST_CODE);
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this);
                 startActivityForResult(intent, ScanConstants.START_CAMERA_REQUEST_CODE, options.toBundle());
+
+
             }
         });
 
@@ -178,83 +184,11 @@ FloatingActionButton camera;
 
 
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public static List<File> getAllFiles(String dirPath ){
-
-        List<File> fileList = new ArrayList<>();
-
-        final File sd = Environment.getExternalStorageDirectory();
-        File targetDirectory = new File( sd, dirPath );
-
-        if( targetDirectory.listFiles() != null ){
-            for( File eachFile : targetDirectory.listFiles() ){
-                fileList.add(eachFile);
-
-            }
-        }
-
-        fileList.sort( new Comparator<File>() {
-            public int compare(File f1, File f2) {
-                return Long.compare(f1.lastModified(), f2.lastModified());
-            }
-        });
-        return fileList;
-
-    }
-
-    public static void mkdir( String dirPath ){
-
-        final File sd = Environment.getExternalStorageDirectory();
-        File storageDirectory = new File(sd, dirPath);
-        if (!storageDirectory.exists()) {
-            storageDirectory.mkdir();
-        }
-    }
-
-    public static void clearDirectory( String dirPath ){
-
-        final File sd = Environment.getExternalStorageDirectory();
-        File targetDirectory = new File( sd, dirPath );
-
-        if( targetDirectory.listFiles() != null ){
-            for( File tempFile : targetDirectory.listFiles() ){
-                tempFile.delete();
-            }
-        }
-
-    }
 
 
 
-    public static void writeFile( String baseDirectory, String filename, FileWrite callback ) throws IOException {
-
-        final File sd = Environment.getExternalStorageDirectory();
-        String absFilename = baseDirectory + filename;
-        File dest = new File(sd, absFilename);
-
-        FileOutputStream out = new FileOutputStream(dest);
-
-        callback.write( out );
-
-        out.flush();
-        out.close();
-    }
-
-    public static void removeFile(  String filepath) {
-        final File sd = Environment.getExternalStorageDirectory();
-        File targetFile = new File( sd, filepath );
-        targetFile.delete();
-    }
-
-    public static void moveFile(  String oldFilepath, String newFilePath) {
-        final File sd = Environment.getExternalStorageDirectory();
-        File targetFile = new File( sd, oldFilepath );
-        targetFile.renameTo(new File(sd, newFilePath));
-    }
 
 
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
     private void saveBitmap(final Bitmap bitmap, final boolean addMore ){
 
         final String baseDirectory =  getApplicationContext().getString( addMore ? R.string.storage_stage : R.string.storage_path);
@@ -269,7 +203,7 @@ FloatingActionButton camera;
 
                 String filename = "SCANNED_STG_" + timestamp + ".png";
 
-            writeFile(baseDirectory, filename, new FileWrite() {
+            FileIo.writeFile(baseDirectory, filename, new FileWrite() {
                     @Override
                     public void write(FileOutputStream out) {
                         bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
@@ -287,9 +221,9 @@ FloatingActionButton camera;
 
             DialogUtil.UserFilename( c, null, null, new UtilDialogCallback() {
 
-                @RequiresApi(api = Build.VERSION_CODES.N)
+
                 @Override
-                public void onSave(String textValue, String category) {
+                public void onSave(String textValue, String category,Toast mess) {
 
                     try {
 
@@ -297,7 +231,7 @@ FloatingActionButton camera;
 
                         String stagingDirPath = getApplicationContext().getString( R.string.storage_stage );
 
-                        List<File> stagingFiles = getAllFiles( stagingDirPath );
+                        List<File> stagingFiles = FileIo.getAllFiles( stagingDirPath );
                         for ( File stagedFile : stagingFiles ) {
                             pdfWriter.addFile( stagedFile );
                         }
@@ -307,13 +241,14 @@ FloatingActionButton camera;
                         String itemName = textValue.replaceAll("[^a-zA-Z0-9\\s]", "");
                         String filename = timestamp + "-" +  itemName + ".pdf";
 
-                        mkdir(baseDirectory + "/" + category);
-                     writeFile(baseDirectory + "/" + category + "/", filename, new FileWrite() {
+                        FileIo.mkdir(baseDirectory + "/" + category);
+                     FileIo.writeFile(baseDirectory + "/" + category + "/", filename, new FileWrite() {
                                  @Override
                                  public void write(FileOutputStream out) {
                                      try {
                                          pdfWriter.write(out);
 
+                                         Toast.makeText(c, "Saved", Toast.LENGTH_SHORT).show();
                                      }catch (IOException e){
                                          e.printStackTrace();
                                      }
@@ -323,7 +258,7 @@ FloatingActionButton camera;
 
                              fileAdapter.notifyDataSetChanged();
 
-                       clearDirectory( stagingDirPath );
+                       FileIo.clearDirectory( stagingDirPath );
 
                         SimpleDateFormat simpleDateFormatView = new SimpleDateFormat("dd-MM-yyyy hh:mm");
                         final String timestampView = simpleDateFormatView.format(new Date());
@@ -341,7 +276,8 @@ FloatingActionButton camera;
                         bitmap.recycle();
                         System.gc();
 
-                    }catch(IOException ioe){
+                    }
+                    catch(IOException ioe){
                         ioe.printStackTrace();
 
                     }
@@ -352,7 +288,6 @@ FloatingActionButton camera;
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     private void saveFile() {
 
         final String baseDirectory = getApplicationContext().getString(R.string.storage_path);
@@ -365,14 +300,14 @@ FloatingActionButton camera;
         DialogUtil.UserFilename(c, null, null, new UtilDialogCallback() {
 
             @Override
-            public void onSave(String textValue, String category) {
+            public void onSave(String textValue, String category, final Toast mess) {
                 try {
 
                     final PDFWriterUtil pdfWriter = new PDFWriterUtil();
 
                     String stagingDirPath = getApplicationContext().getString(R.string.storage_stage);
 
-                    List<File> stagingFiles = getAllFiles(stagingDirPath);
+                    List<File> stagingFiles = FileIo.getAllFiles(stagingDirPath);
                     for (File stagedFile : stagingFiles) {
                         pdfWriter.addFile(stagedFile);
                     }
@@ -380,12 +315,13 @@ FloatingActionButton camera;
                     String itemName = textValue.replaceAll("[^a-zA-Z0-9\\s]", "");
                     String filename = timestamp + "-" +  itemName + ".pdf";
 
-               mkdir(baseDirectory + "/" + category + "/");
-                    writeFile(baseDirectory+ "/" + category + "/", filename, new FileWrite() {
+               FileIo.mkdir(baseDirectory + "/" + category + "/");
+                    FileIo.writeFile(baseDirectory+ "/" + category + "/", filename, new FileWrite() {
                         @Override
                         public void write(FileOutputStream out) {
                             try {
                                 pdfWriter.write(out);
+                                Toast.makeText(c, "File Saved", Toast.LENGTH_SHORT).show();
 
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -396,7 +332,7 @@ FloatingActionButton camera;
 
                     fileAdapter.notifyDataSetChanged();
 
-                    clearDirectory(stagingDirPath);
+                    FileIo.clearDirectory(stagingDirPath);
 
                     SimpleDateFormat simpleDateFormatView = new SimpleDateFormat("dd-MM-yyyy hh:mm");
                     final String timestampView = simpleDateFormatView.format(new Date());
@@ -413,7 +349,8 @@ FloatingActionButton camera;
 
                     System.gc();
 
-                } catch (IOException ioe) {
+                }
+                catch (IOException ioe) {
                     ioe.printStackTrace();
 
                 }
@@ -421,7 +358,7 @@ FloatingActionButton camera;
         });
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

@@ -1,0 +1,57 @@
+com/example/monscanner/ProgressDialogFragment.java
+ com.example.monscanner.ProgressDialogFragment
+ com.example.monscanner.ProgressDialogFragment$1
+com/example/monscanner/ScanConstants.java
+ com.example.monscanner.ScanConstants
+com/example/monscanner/BuildConfig.java
+ com.example.monscanner.BuildConfig
+com/example/monscanner/PolygonView.java
+ com.example.monscanner.PolygonView
+ com.example.monscanner.PolygonView$1
+ com.example.monscanner.PolygonView$MidPointTouchListenerImpl
+ com.example.monscanner.PolygonView$TouchListenerImpl
+com/example/monscanner/ScanActivity.java
+ com.example.monscanner.ScanActivity
+com/example/monscanner/CameraActivity.java
+ com.example.monscanner.CameraActivity
+ com.example.monscanner.CameraActivity$1
+ com.example.monscanner.CameraActivity$2
+ com.example.monscanner.CameraActivity$3
+ com.example.monscanner.CameraActivity$4
+ com.example.monscanner.CameraActivity$5
+ com.example.monscanner.CameraActivity$6
+ com.example.monscanner.CameraActivity$7
+ com.example.monscanner.CameraActivity$8
+ com.example.monscanner.CameraActivity$9
+com/example/monscanner/ShapeValidationFragment.java
+ com.example.monscanner.ShapeValidationFragment
+ com.example.monscanner.ShapeValidationFragment$1
+ com.example.monscanner.ShapeValidationFragment$2
+ com.example.monscanner.ShapeValidationFragment$ScanButtonListener
+ com.example.monscanner.ShapeValidationFragment$ScanButtonListener$1
+ com.example.monscanner.ShapeValidationFragment$SwitchListener
+ com.example.monscanner.ShapeValidationFragment$SwitchListener$1
+ com.example.monscanner.ShapeValidationFragment$SwitchListener$1$1
+com/example/monscanner/EditionFragment.java
+ com.example.monscanner.EditionFragment
+ com.example.monscanner.EditionFragment$1
+ com.example.monscanner.EditionFragment$2
+ com.example.monscanner.EditionFragment$3
+ com.example.monscanner.EditionFragment$BWListener
+ com.example.monscanner.EditionFragment$BWListener$1
+ com.example.monscanner.EditionFragment$FileWritingCallbackS
+ com.example.monscanner.EditionFragment$GrayListener
+ com.example.monscanner.EditionFragment$GrayListener$1
+ com.example.monscanner.EditionFragment$MagicListener
+ com.example.monscanner.EditionFragment$MagicListener$1
+ com.example.monscanner.EditionFragment$OriginalListener
+ com.example.monscanner.EditionFragment$OriginalListener$1
+ com.example.monscanner.EditionFragment$Pink
+ com.example.monscanner.EditionFragment$Pink$1
+ com.example.monscanner.EditionFragment$RotationListener
+ com.example.monscanner.EditionFragment$RotationListener$1
+ com.example.monscanner.EditionFragment$SummerColor
+ com.example.monscanner.EditionFragment$SummerColor$1
+ com.example.monscanner.EditionFragment$ValidationListener
+ com.example.monscanner.EditionFragment$ValidationListener$1
+ com.example.monscanner.EditionFragment$ValidationListener$1$1

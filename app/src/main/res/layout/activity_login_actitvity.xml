@@ -86,26 +86,24 @@
             android:layout_alignLeft="@+id/login_email"
             android:layout_alignStart="@+id/login_email" />
         <ImageView
-            android:id="@+id/open_eye"
-
+            android:id="@+id/open_eye_login"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="280dp"
+            android:layout_marginLeft="250dp"
             android:layout_marginTop="210dp"
             android:visibility="gone"
             android:src="@drawable/ic_remove_red_eye_black_24dp"
             android:layout_below="@id/login_email"
-            app:tint="#000" />
+            />
         <ImageView
-            android:id="@+id/close_eye"
+            android:id="@+id/close_eye_login"
             android:visibility="visible"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="280dp"
+            android:layout_marginLeft="250dp"
             android:layout_marginTop="210dp"
-            android:src="@drawable/eye"
-            android:layout_below="@id/login_email"
-            app:tint="#000" />
+            android:src="@drawable/close_eye"
+            android:layout_below="@id/login_email" />
         <Button
             android:id="@+id/login_button"
             android:layout_width="150dp"

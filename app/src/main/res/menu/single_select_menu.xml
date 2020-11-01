@@ -10,10 +10,12 @@
         <item android:id="@+id/menu_edit"
 
             android:iconTint="@android:color/white"
-            android:title="Rename" />
+            android:title="Rename"
+            />
 
         <item android:id="@+id/menu_delete"
 
             android:iconTint="@android:color/white"
             android:title="Delete" />
+
 </menu>

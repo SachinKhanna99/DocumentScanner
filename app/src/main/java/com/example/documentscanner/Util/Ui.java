@@ -14,7 +14,7 @@ public  static  void  setNavigationBar(View view, Activity activity)
         int flags = view.getSystemUiVisibility();
         flags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
         view.setSystemUiVisibility(flags);
-        activity.getWindow().setNavigationBarColor(Color.parseColor("#000000"));
+        activity.getWindow().setNavigationBarColor(Color.parseColor("#FAFAFA"));
     }
 }
     public static void setWhiteNavigation(View view, Activity activity){

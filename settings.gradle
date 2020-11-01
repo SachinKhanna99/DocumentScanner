@@ -1,3 +1,4 @@
-include ':scanlibrary'
-rootProject.name='Document Scanner'
+include ':opencv'
+include ':monscanner'
 include ':app'
+rootProject.name = "MyAbc"

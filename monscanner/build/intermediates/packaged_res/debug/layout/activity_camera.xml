@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".CameraActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="250dp"
+            android:layout_weight="3">
+
+           <ImageView
+               android:id="@+id/flash_on"
+               android:layout_width="50dp"
+               android:layout_height="35dp"
+               android:layout_marginRight="5dp"
+               android:layout_marginTop="18dp"
+               android:layout_marginBottom="5dp"
+               android:scaleType="fitCenter"
+
+               android:src="@drawable/ic_baseline_flash_off_24"
+               />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:tint="@color/white"
+                android:layout_marginTop="17dp"
+                android:layout_marginLeft="5dp"
+
+                android:src="@drawable/ic_baseline_settings_24"/>
+
+
+        </LinearLayout>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/infosButton"-->
+<!--            android:layout_width="5mm"-->
+<!--            android:layout_height="5mm"-->
+<!--            android:layout_margin="8dp"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            android:src="@drawable/infos" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/settingsButton"-->
+<!--            android:layout_width="5mm"-->
+<!--            android:layout_height="5mm"-->
+<!--            android:layout_margin="8dp"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            android:src="@drawable/settings" />-->
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+
+        <TextureView
+            android:id="@+id/textureView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/photoButton"
+        android:layout_width="80dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/camera"
+        android:scaleType="fitCenter" />
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/galleryButton"-->
+<!--        android:layout_width="69dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:background="@drawable/gallery"-->
+<!--        android:scaleType="fitCenter" />-->
+
+</LinearLayout>

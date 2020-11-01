@@ -87,8 +87,8 @@
 //       }
 //   }
 //
-apply plugin: 'com.android.library'
 
+apply plugin: 'com.android.library'
 
 println "OpenCV: " + project.buildscript.sourceFile
 
@@ -99,19 +99,7 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-        ndk
-                {
-                    moduleName "Scanner"
-                }
     }
-
-sourceSets.main
-        {
-            jni.srcDirs = []
-            jniLibs.srcDir 'src/main/libs'
-        }
 
     buildTypes {
         release {
@@ -136,8 +124,4 @@ sourceSets.main
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.android.material:material:1.2.1'
 }

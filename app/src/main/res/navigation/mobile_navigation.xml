@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.myabc.Util.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.myabc.Util.ui.gallery.GalleryFragment"
+        android:label="Scan Document"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.myabc.Util.ui.slideshow.SlideshowFragment"
+        android:label="Scan ID"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/account"
+        android:name="com.example.myabc.fragments.AccountFragment"
+        tools:layout="@layout/fragment_test"
+        android:label="My Accounts"/>
+
+<!--    <fragment-->
+<!--        android:name="com.example.myabc.fragments.fragment_gallery"-->
+<!--        android:label="Import From Gallery"-->
+<!--        android:id="@+id/import_gallery"-->
+<!--        tools:layout="@layout/fragment_gallery2"/>-->
+
+
+    <fragment
+        android:name="com.example.myabc.fragments.PdfToImageFragment"
+        android:label="Pdf To Image"
+        android:id="@+id/pdf_image"
+        tools:layout="@layout/fragment_pdf_to_image"/>
+
+    <fragment
+        android:id="@+id/merge_pdf"
+        tools:layout="@layout/fragment_merge_pdf"
+        android:label="Merge Pdf"
+        android:name="com.example.myabc.fragments.MergePdf"/>
+
+    <fragment
+        android:name="com.example.myabc.fragments.MyTaggedFiles"
+        android:label="My Tagged Files"
+        tools:layout="@layout/fragment_my_tagged_files"
+        android:id="@+id/my_tag"/>
+
+    <fragment
+        android:name="com.example.myabc.fragments.RateAndReview"
+        android:label="Rate And Review"
+        tools:layout="@layout/fragment_rate_and_review"
+        android:id="@+id/rate_review"/>
+
+    <fragment
+        android:name="com.example.myabc.fragments.HelpFragment"
+        android:label="Help"
+        tools:layout="@layout/fragment_help"
+        android:id="@+id/help"/>
+    <fragment
+        android:name="com.example.myabc.fragments.ContactUsFragment"
+        android:label="Contact Us"
+        tools:layout="@layout/fragment_contact_us"
+        android:id="@+id/contactus"/>
+    <fragment
+        android:name="com.example.myabc.fragments.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about"
+        android:id="@+id/about"/>
+</navigation>

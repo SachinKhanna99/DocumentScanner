@@ -16,7 +16,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_targetsDefined)
 set(_targetsNotDefined)
 set(_expectedTargets)
-foreach(_expectedTarget libcpufeatures libjpeg-turbo libtiff libwebp libjasper libpng IlmImf tbb libprotobuf quirc tegra_hal opencv_core opencv_flann opencv_imgproc opencv_ml opencv_photo opencv_dnn opencv_imgcodecs opencv_videoio opencv_highgui opencv_features2d opencv_calib3d opencv_objdetect opencv_stitching opencv_video opencv_java)
+foreach(_expectedTarget libcpufeatures libjpeg-turbo libtiff libwebp libjasper libpng IlmImf tbb libprotobuf quirc tegra_hal ocv.3rdparty.android_mediandk opencv_core opencv_flann opencv_imgproc opencv_ml opencv_photo opencv_dnn opencv_imgcodecs opencv_videoio opencv_highgui opencv_features2d opencv_calib3d opencv_objdetect opencv_stitching opencv_video opencv_java)
   list(APPEND _expectedTargets ${_expectedTarget})
   if(NOT TARGET ${_expectedTarget})
     list(APPEND _targetsNotDefined ${_expectedTarget})
@@ -102,6 +102,16 @@ add_library(quirc STATIC IMPORTED)
 # Create imported target tegra_hal
 add_library(tegra_hal STATIC IMPORTED)
 
+# Create imported target ocv.3rdparty.android_mediandk
+add_library(ocv.3rdparty.android_mediandk INTERFACE IMPORTED)
+
+set_target_properties(ocv.3rdparty.android_mediandk PROPERTIES
+  INTERFACE_COMPILE_DEFINITIONS "HAVE_ANDROID_MEDIANDK"
+  INTERFACE_INCLUDE_DIRECTORIES ""
+  INTERFACE_LINK_LIBRARIES "-landroid -llog -lmediandk"
+  INTERFACE_SYSTEM_INCLUDE_DIRECTORIES ""
+)
+
 # Create imported target opencv_core
 add_library(opencv_core STATIC IMPORTED)
 
@@ -155,7 +165,7 @@ set_target_properties(opencv_imgcodecs PROPERTIES
 add_library(opencv_videoio STATIC IMPORTED)
 
 set_target_properties(opencv_videoio PROPERTIES
-  INTERFACE_LINK_LIBRARIES "opencv_core;opencv_imgproc;opencv_imgcodecs;\$<LINK_ONLY:dl>;\$<LINK_ONLY:m>;\$<LINK_ONLY:log>;\$<LINK_ONLY:tegra_hal>"
+  INTERFACE_LINK_LIBRARIES "opencv_core;opencv_imgproc;opencv_imgcodecs;\$<LINK_ONLY:dl>;\$<LINK_ONLY:m>;\$<LINK_ONLY:log>;\$<LINK_ONLY:tegra_hal>;\$<LINK_ONLY:ocv.3rdparty.android_mediandk>"
 )
 
 # Create imported target opencv_highgui
@@ -207,8 +217,8 @@ set_target_properties(opencv_java PROPERTIES
   INTERFACE_LINK_LIBRARIES "jnigraphics;log;dl;z"
 )
 
-if(CMAKE_VERSION VERSION_LESS 2.8.12)
-  message(FATAL_ERROR "This file relies on consumers using CMake 2.8.12 or greater.")
+if(CMAKE_VERSION VERSION_LESS 3.0.0)
+  message(FATAL_ERROR "This file relies on consumers using CMake 3.0.0 or greater.")
 endif()
 
 # Load information for each installed configuration.

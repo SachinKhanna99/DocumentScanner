@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/importgalleryfragmet"
+    tools:context=".fragments.fragment_gallery">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:tint="#ffff"
+        app:backgroundTint="#000"
+        app:fabCustomSize="60dp"
+        app:maxImageSize="40dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/gallery"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp"
+
+        android:tooltipText="Choose from gallery"
+
+        android:textColor="@android:color/white">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+</RelativeLayout>

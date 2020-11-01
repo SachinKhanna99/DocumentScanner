@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/merge"
+            android:title="Scan Document" />
+
+<!--        <item-->
+<!--            android:id="@+id/import_gallery"-->
+<!--            android:icon="@drawable/ic_image"-->
+<!--            android:title="Import from Gallery"/>-->
+
+
+
+
+
+    </group>
+    <item android:title="Premium">
+
+        <menu>
+            <item
+                android:id="@+id/nav_slideshow"
+
+                android:title="Scan ID Card" />
+
+            <item
+                android:id="@+id/pdf_image"
+                android:icon="@drawable/pdfimage"
+                android:title="Pdf to image" />
+
+            <item
+                android:id="@+id/merge_pdf"
+                android:icon="@drawable/merge"
+                android:title="Merge PDF"/>
+            <item
+                android:id="@+id/my_tag"
+                android:icon="@drawable/mytagged"
+                android:title="My Tagged Files"/>
+        </menu>
+    </item>
+    <item android:title="Help and Support">
+        <menu>
+            <item
+                android:id="@+id/account"
+                android:icon="@drawable/ic_account_circle_black_24dp"
+                android:title="My Account"/>
+            <item
+                android:id="@+id/rate_review"
+                android:icon="@drawable/ratereview"
+                android:title="Rate and Review"/>
+            <item
+                android:id="@+id/help"
+                android:icon="@drawable/help"
+                android:title="Help"/>
+            <item
+                android:id="@+id/contactus"
+                android:icon="@drawable/contact"
+                android:title="Contact us"/>
+            <item
+                android:id="@+id/about"
+                android:icon="@drawable/about"
+                android:title="About"/>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_page"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding=".5dp"
+    android:orientation="vertical"
+    android:gravity="center_vertical|center_horizontal"
+    android:backgroundTint="#000"
+    android:background="#000"
+    >
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:background="@drawable/ic_image">
+    </ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Add More Images"
+        android:textColor="@color/white"
+        android:gravity="center" />
+
+</LinearLayout>

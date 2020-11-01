@@ -65,8 +65,8 @@ String TAG="LOGIN-->";
         login=findViewById(R.id.login_button);
 
 
-        open=findViewById(R.id.open_eye);
-        close=findViewById(R.id.close_eye);
+        open=findViewById(R.id.open_eye_login);
+        close=findViewById(R.id.close_eye_login);
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#151313"
+    tools:context=".LoginActivity">
+
+
+
+
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/ic_camera_black_24dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_centerHorizontal="true"
+            app:tint="#FFFFFF" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            app:cardCornerRadius="30sp"
+            android:id="@+id/card"
+            android:layout_below="@id/imageView"
+            android:layout_marginTop="40dp"
+            android:layout_margin="30dp"
+            android:background="#fff"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LOGIN"
+                android:textSize="27sp"
+                android:textAlignment="center"
+                android:layout_marginTop="15dp"
+                android:textColor="#005357"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="17sp"
+                android:layout_marginTop="75dp"
+                android:layout_marginLeft="30dp"
+                android:textColor="#000"/>
+            <EditText
+                android:id="@+id/login_email"
+                android:layout_width="270dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:layout_marginLeft="30dp"
+                android:inputType="textPersonName"
+                android:layout_below="@id/imageView"
+                android:layout_marginBottom="25dp"
+                android:padding="5dp"
+                android:textSize="18sp"
+                android:drawableTint="@android:color/holo_blue_dark"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textSize="17sp"
+                android:layout_marginTop="165dp"
+                android:layout_marginLeft="30dp"
+                android:textColor="#000"/>
+            <EditText
+                android:id="@+id/login_password"
+                android:layout_width="250dp"
+                android:layout_height="45dp"
+                android:layout_below="@+id/login_email"
+                android:layout_marginTop="200dp"
+                android:ems="10"
+                android:textSize="17sp"
+                android:layout_marginLeft="30dp"
+                android:padding="5dp"
+                android:drawableTint="@android:color/holo_blue_dark"
+                android:inputType="textPassword"
+                android:layout_marginBottom="80dp"
+                android:layout_alignLeft="@+id/login_email"
+                android:layout_alignStart="@+id/login_email" />
+            <ImageView
+                android:id="@+id/open_eye"
+
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="280dp"
+                android:layout_marginTop="210dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_remove_red_eye_black_24dp"
+                android:layout_below="@id/login_email"
+                app:tint="#000" />
+            <ImageView
+                android:id="@+id/close_eye"
+                android:visibility="visible"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="280dp"
+                android:layout_marginTop="210dp"
+                android:src="@drawable/close_eye"
+                android:layout_below="@id/login_email"
+                app:tint="#000" />
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="280dp"
+                android:layout_marginLeft="90dp"
+                android:text="Login"
+                android:textColor="@android:color/white"
+                android:layout_below="@+id/login_password"
+                android:background="@drawable/login_button"
+
+                />
+
+            <TextView
+                android:id="@+id/signup_text"
+                android:textSize="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create new Account"
+
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="350dp"
+                android:layout_marginLeft="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="0dp" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/or"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="OR"-->
+<!--                android:layout_marginTop="390dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="#000"-->
+<!--                android:layout_below="@+id/card"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/skip_it"-->
+<!--                android:textSize="17sp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Skip"-->
+<!--                android:layout_marginTop="420dp"-->
+<!--                android:textColor="#000"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_below="@+id/or"-->
+<!--                android:textAlignment="center"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginBottom="6dp" />-->
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+

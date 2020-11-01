@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PaymentActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:text="Payment Option   (PROTOTYPE)"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textStyle="bold"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="150dp">
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:background="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/name" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="UPI ID"
+            android:background="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="100dp"
+            android:id="@+id/upi_id"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            android:hint="Amount"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="150dp"
+            android:id="@+id/amount_et"
+            android:inputType="numberDecimal"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Any Message"
+            android:background="@color/white"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="20dp"
+            android:layout_marginTop="200dp"
+            android:id="@+id/note"
+            />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:id="@+id/send"
+            android:layout_marginTop="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="170dp"
+            android:textColor="@color/white"
+            android:text="Pay Now"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,81 +1,37 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:2:1-28:12
-INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:2:1-28:12
+ADDED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml:2:1-6:12
+INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml:2:1-6:12
+INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml:2:1-6:12
+INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml:2:1-6:12
+INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml:2:1-6:12
+INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml:2:1-6:12
+INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml:2:1-6:12
 	package
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:3:7-27
-		INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
-		INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
+		ADDED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml:3:7-27
+		INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
+		INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:2:1-28:12
-		INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
-	android:versionCode
-		INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:2:1-28:12
-		INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
+		ADDED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml:5:7-34
+		INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
+		INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:2:11-69
-uses-feature#android.hardware.camera
-ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:4:5-6:35
-	android:required
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:6:9-32
-	android:name
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:5:9-47
-uses-permission#android.permission.CAMERA
-ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:8:5-65
-	android:name
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:8:22-62
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:9:5-80
-	android:name
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:9:22-77
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:10:5-81
-	android:name
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:10:22-78
-application
-ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:12:5-27:19
-	android:label
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:16:9-41
-	android:hardwareAccelerated
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:15:9-43
-	android:largeHeap
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:14:9-33
-	android:allowBackup
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:13:9-35
-provider#androidx.core.content.FileProvider
-ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:18:9-26:20
-	android:grantUriPermissions
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:22:13-47
-	android:authorities
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:20:13-71
-	android:exported
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:21:13-37
-	android:name
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:19:13-62
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:23:13-25:57
-	android:resource
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:25:17-55
-	android:name
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml:24:17-67
+		ADDED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml:4:7-33
+		INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
+		INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
 uses-sdk
-INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
-INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
-INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
-INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
+INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
+INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
+INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
+INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
-		INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
+		INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
+		ADDED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
+		INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
-		ADDED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
-		INJECTED from C:\Users\Sachin\Documents\GitHub\DocumentScanner\sdk\java\AndroidManifest.xml
+		INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
+		ADDED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml
+		INJECTED from C:\Users\Sachin\AndroidStudioProjects\MyAbc\sdk\java\AndroidManifest.xml

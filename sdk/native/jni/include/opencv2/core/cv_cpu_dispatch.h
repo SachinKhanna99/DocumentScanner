@@ -15,6 +15,7 @@
 #define CV_CPU_OPTIMIZATION_NAMESPACE cpu_baseline
 #define CV_CPU_OPTIMIZATION_NAMESPACE_BEGIN namespace cpu_baseline {
 #define CV_CPU_OPTIMIZATION_NAMESPACE_END }
+#define CV_CPU_BASELINE_MODE 1
 #endif
 
 
@@ -123,6 +124,10 @@
 
 #if defined CV_CPU_COMPILE_AVX && !defined CV_CPU_BASELINE_COMPILE_AVX
 struct VZeroUpperGuard {
+#ifdef __GNUC__
+    __attribute__((always_inline))
+#endif
+    inline VZeroUpperGuard() { _mm256_zeroupper(); }
 #ifdef __GNUC__
     __attribute__((always_inline))
 #endif
