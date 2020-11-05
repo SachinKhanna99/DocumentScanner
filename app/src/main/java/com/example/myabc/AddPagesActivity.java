@@ -43,7 +43,7 @@ Button button;
         button=findViewById(R.id.addMore);
         setTitle("Add More Pages" );
 
-        final String stagingDirPath =  getApplicationContext().getString( R.string.storage_staging_path);
+        final String stagingDirPath =  getApplicationContext().getString( R.string.storage_stage);
         final String strag=getApplicationContext().getString(R.string.base_staging_path);
         final List<File> stagingFiles = FileIo.getAllFiles( stagingDirPath);
 

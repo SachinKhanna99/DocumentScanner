@@ -3,8 +3,6 @@ com/example/monscanner/ProgressDialogFragment.java
  com.example.monscanner.ProgressDialogFragment$1
 com/example/monscanner/ScanConstants.java
  com.example.monscanner.ScanConstants
-com/example/monscanner/BuildConfig.java
- com.example.monscanner.BuildConfig
 com/example/monscanner/PolygonView.java
  com.example.monscanner.PolygonView
  com.example.monscanner.PolygonView$1
@@ -23,6 +21,8 @@ com/example/monscanner/CameraActivity.java
  com.example.monscanner.CameraActivity$7
  com.example.monscanner.CameraActivity$8
  com.example.monscanner.CameraActivity$9
+com/example/monscanner/BuildConfig.java
+ com.example.monscanner.BuildConfig
 com/example/monscanner/ShapeValidationFragment.java
  com.example.monscanner.ShapeValidationFragment
  com.example.monscanner.ShapeValidationFragment$1
