@@ -20,6 +20,7 @@ import android.widget.RelativeLayout;
 
 import com.example.documentscanner.Util.Ui;
 import com.example.documentscanner.Util.UtilQCR;
+import com.example.myabc.R;
 
 import java.io.File;
 import java.util.ArrayList;

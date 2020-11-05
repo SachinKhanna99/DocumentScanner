@@ -40,6 +40,9 @@ import com.example.documentscanner.Util.PDFWriterUtil;
 import com.example.documentscanner.Util.Ui;
 import com.example.documentscanner.Util.UtilDialogCallback;
 
+import com.example.monscanner.ScanActivity;
+import com.example.monscanner.ScanConstants;
+import com.example.myabc.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.karumi.dexter.Dexter;
@@ -50,8 +53,7 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.karumi.dexter.listener.single.PermissionListener;
-import com.scanlibrary.ScanActivity;
-import com.scanlibrary.ScanConstants;
+
 
 import java.io.File;
 import java.io.FileOutputStream;

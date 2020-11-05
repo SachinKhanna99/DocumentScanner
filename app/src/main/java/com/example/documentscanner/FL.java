@@ -15,6 +15,8 @@ import androidx.appcompat.view.ActionMode;
 import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myabc.R;
+
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -67,7 +69,7 @@ public class FL extends RecyclerView.ViewHolder {
 
             } else {
                 this.adapter.selectedItems.add(item);
-                itemLayout.setBackgroundResource(R.color.colorPrimaryDark);
+                itemLayout.setBackgroundResource(R.color.colorPrimary);
             }
         }
     }

@@ -11,7 +11,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.documentscanner.MainActivity;
-import com.example.documentscanner.R;
+import com.example.myabc.R;
 
 public class DialogUtil {
 

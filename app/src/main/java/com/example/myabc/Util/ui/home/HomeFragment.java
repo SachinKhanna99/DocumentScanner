@@ -126,7 +126,7 @@ public HomeFragment(){}
 
                 scannedBitmaps.clear();
 
-                String stagingDirPath = getActivity().getApplicationContext().getString(R.string.storage_staging_path);
+                String stagingDirPath = getActivity().getApplicationContext().getString(R.string.storage_stage);
                 String scanningTmpDirectory = getActivity().getApplicationContext().getString(R.string.base_scantmp_path);
 
                 FileIo.clearDirectory(stagingDirPath);
@@ -145,7 +145,7 @@ public HomeFragment(){}
         final String baseStorageDirectory =  getActivity().getApplicationContext().getString( R.string.storage_path);
         FileIo.mkdir( baseStorageDirectory);
 
-        final String baseStagingDirectory = getActivity().getApplicationContext().getString( R.string.storage_staging_path);
+        final String baseStagingDirectory = getActivity().getApplicationContext().getString( R.string.storage_stage);
         FileIo.mkdir( baseStagingDirectory );
 
         final String scanningTmpDirectory =  getActivity().getApplicationContext().getString( R.string.base_scantmp_path);;
@@ -201,7 +201,7 @@ public HomeFragment(){}
 
     private void saveBitmap(final Bitmap bitmap, final boolean addMore ){
 
-        final String baseDirectory =  getActivity().getApplicationContext().getString( addMore ? R.string.storage_staging_path : R.string.storage_path);
+        final String baseDirectory =  getActivity().getApplicationContext().getString( addMore ? R.string.storage_stage : R.string.storage_path);
         final File sd = Environment.getExternalStorageDirectory();
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy_hh-mm-ss");
@@ -239,7 +239,7 @@ public HomeFragment(){}
 
                         final PDFWriterUtil pdfWriter = new PDFWriterUtil();
 
-                        String stagingDirPath = getActivity().getApplicationContext().getString( R.string.storage_staging_path );
+                        String stagingDirPath = getActivity().getApplicationContext().getString( R.string.storage_stage );
 
                         List<File> stagingFiles = FileIo.getAllFiles( stagingDirPath );
                         for ( File stagedFile : stagingFiles ) {
@@ -315,7 +315,7 @@ public HomeFragment(){}
 
                     final PDFWriterUtil pdfWriter = new PDFWriterUtil();
 
-                    String stagingDirPath = getActivity().getApplicationContext().getString(R.string.storage_staging_path);
+                    String stagingDirPath = getActivity().getApplicationContext().getString(R.string.storage_stage);
 
                     List<File> stagingFiles = FileIo.getAllFiles(stagingDirPath);
                     for (File stagedFile : stagingFiles) {

@@ -45,7 +45,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.5.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.+'
-    implementation 'org.apache.pdfbox:jbig2-imageio:3.0.0-SNAPSHOT'
+    //implementation 'org.apache.pdfbox:jbig2-imageio:3.0.0-SNAPSHOT'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.google.firebase:firebase-ml-vision:24.1.0'

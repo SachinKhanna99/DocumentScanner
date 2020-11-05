@@ -91,7 +91,7 @@ public class fragment_gallery extends Fragment {
             }
         }
     }
-    private void  savePdf() {
+    private void savePdf() {
 
         final String baseDirectory = getActivity().getApplicationContext().getString(R.string.storage_path);
         final File sd = Environment.getExternalStorageDirectory();
@@ -108,7 +108,7 @@ public class fragment_gallery extends Fragment {
 
                     final PDFWriterUtil pdfWriter = new PDFWriterUtil();
 
-                    String stagingDirPath = getActivity().getApplicationContext().getString(R.string.storage_staging_path);
+                    String stagingDirPath = getActivity().getApplicationContext().getString(R.string.storage_stage);
 
                     List<File> stagingFiles = FileIo.getAllFiles(stagingDirPath);
                     for (File stagedFile : stagingFiles) {
@@ -162,7 +162,7 @@ public class fragment_gallery extends Fragment {
     }
 
     private void saveBitmap(Bitmap bitmap, boolean doScanMore) {
-        final String baseDirectory =  getActivity().getApplicationContext().getString( doScanMore? R.string.storage_staging_path : R.string.storage_path);
+        final String baseDirectory =  getActivity().getApplicationContext().getString( doScanMore? R.string.storage_stage : R.string.storage_path);
         final File sd = Environment.getExternalStorageDirectory();
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy_hh-mm-ss");
@@ -200,7 +200,7 @@ public class fragment_gallery extends Fragment {
 
                         final PDFWriterUtil pdfWriter = new PDFWriterUtil();
 
-                        String stagingDirPath = getActivity().getApplicationContext().getString( R.string.storage_staging_path );
+                        String stagingDirPath = getActivity().getApplicationContext().getString( R.string.storage_stage );
 
                         List<File> stagingFiles = FileIo.getAllFiles( stagingDirPath );
                         for ( File stagedFile : stagingFiles ) {

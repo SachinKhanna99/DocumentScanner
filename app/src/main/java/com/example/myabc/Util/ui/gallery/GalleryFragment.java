@@ -120,7 +120,7 @@ public class GalleryFragment extends Fragment {
             public void onClick(View v) {
                 scannedBitmaps.clear();
 
-                String stagingDirPath = getActivity().getApplicationContext().getString(R.string.storage_staging_path);
+                String stagingDirPath = getActivity().getApplicationContext().getString(R.string.storage_stage);
                 String scanningTmpDirectory = getActivity().getApplicationContext().getString(R.string.base_scantmp_path);
 
                 FileIo.clearDirectory(stagingDirPath);
@@ -144,7 +144,7 @@ public class GalleryFragment extends Fragment {
 
     private void saveBitmap(final Bitmap bitmap, final boolean addMore ){
 
-        final String baseDirectory =  getActivity().getApplicationContext().getString( addMore ? R.string.storage_staging_path : R.string.storage_path);
+        final String baseDirectory =  getActivity().getApplicationContext().getString( addMore ? R.string.storage_stage : R.string.storage_path);
         final File sd = Environment.getExternalStorageDirectory();
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy_hh-mm-ss");
@@ -182,7 +182,7 @@ public class GalleryFragment extends Fragment {
 
                         final PDFWriterUtil pdfWriter = new PDFWriterUtil();
 
-                        String stagingDirPath = getActivity().getApplicationContext().getString( R.string.storage_staging_path );
+                        String stagingDirPath = getActivity().getApplicationContext().getString( R.string.storage_stage );
 
                         List<File> stagingFiles = FileIo.getAllFiles( stagingDirPath );
                         for ( File stagedFile : stagingFiles ) {
@@ -258,7 +258,7 @@ public class GalleryFragment extends Fragment {
 
                     final PDFWriterUtil pdfWriter = new PDFWriterUtil();
 
-                    String stagingDirPath = getActivity().getApplicationContext().getString(R.string.storage_staging_path);
+                    String stagingDirPath = getActivity().getApplicationContext().getString(R.string.storage_stage);
 
                     List<File> stagingFiles = FileIo.getAllFiles(stagingDirPath);
                     for (File stagedFile : stagingFiles) {

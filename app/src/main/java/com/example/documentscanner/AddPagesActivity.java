@@ -13,6 +13,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -25,8 +26,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.documentscanner.Util.FileIo;
-import com.scanlibrary.ScanActivity;
-import com.scanlibrary.ScanConstants;
+import com.example.monscanner.ScanActivity;
+import com.example.monscanner.ScanConstants;
+import com.example.myabc.R;
+
 
 import java.io.File;
 import java.util.List;
@@ -62,7 +65,7 @@ Button button;
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Intent out = new Intent();
-        out.putExtra(ScanConstants.SCANNED_RESULT, data.getExtras().getParcelable(ScanConstants.SCANNED_RESULT));
+        out.putExtra(ScanConstants.SCANNED_RESULT, (Parcelable) data.getExtras().getParcelable(ScanConstants.SCANNED_RESULT));
         out.putExtra(ScanConstants.SCAN_MORE, data.getExtras().getBoolean(ScanConstants.SCAN_MORE));
         setResult(RESULT_OK, out);
         finish();
